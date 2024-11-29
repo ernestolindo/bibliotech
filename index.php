@@ -36,6 +36,7 @@
 
             <section class="book">
                 <h3>Get a Life, Chloe Brown</h3>
+                <p>Talia Hibber - Romance</p>
                 <img src="./assets/images/get-a-life-chloe-brown.jpg" alt="Get a life Chloe Brown" width="50px">
                 <p>
                     After a health scare, Chloe Brown makes a list of things to do to help her "get a life,"
@@ -49,6 +50,7 @@
 
             <section class="book">
                 <h3>Get a Life, Chloe Brown</h3>
+                <p>Talia Hibber - Romance</p>
                 <img src="./assets/images/get-a-life-chloe-brown.jpg" alt="Get a life Chloe Brown" width="50px">
                 <p>
                     After a health scare, Chloe Brown makes a list of things to do to help her "get a life,"
@@ -58,19 +60,6 @@
                 <button>Editar Libro</button>
                 <button>Eliminar Libro</button>
                 <button>Devolver Libro</button>
-            </section>
-
-            <section class="book">
-                <h3>Get a Life, Chloe Brown</h3>
-                <img src="./assets/images/get-a-life-chloe-brown.jpg" alt="Get a life Chloe Brown" width="50px">
-                <p>
-                    After a health scare, Chloe Brown makes a list of things to do to help her "get a life,"
-                    including doing something bad. Naughty doesn't come naturally to good- ...
-                </p>
-                <button>Detalles</button>
-                <button>Editar Libro</button>
-                <button>Eliminar Libro</button>
-                <button>Solicitar Préstamo</button>
             </section>
 
         </section>

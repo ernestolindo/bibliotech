@@ -25,15 +25,19 @@ class Book
     private $title;
     private $author;
     private $category;
+    private $cover;
+    private $description;
     private $isAvailable;
 
-    function __construct($title, $author, $category, $isAvailable)
+    function __construct($title, $author, $category, $cover, $description)
     {
         $this->id = self::$nextId++; // Assign current ID and increment the static counter
         $this->title = $title;
         $this->author = $author;
         $this->category = $category;
-        $this->isAvailable = $isAvailable;
+        $this->cover = $cover;
+        $this->description = $description;
+        $this->isAvailable = true;
     }
 
     function addBook() {}
@@ -76,6 +80,22 @@ class Book
     }
 
     /**
+     * Get the value of cover
+     */
+    public function getCover()
+    {
+        return $this->cover;
+    }
+
+    /**
+     * Get the value of description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
      * Get the value of isAvailable
      */
     public function getIsAvailable()
@@ -115,6 +135,30 @@ class Book
     public function setCategory($category)
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of cover
+     *
+     * @return  self
+     */
+    public function setCover($cover)
+    {
+        $this->cover = $cover;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of description
+     *
+     * @return  self
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
 
         return $this;
     }
