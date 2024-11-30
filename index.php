@@ -1,3 +1,17 @@
+<?php
+require "Classes/Book.php";
+session_start();
+
+if (!isset($_SESSION['books'])) {
+    $_SESSION['books'] = [];
+}
+
+$books = $_SESSION['books'];
+echo "<pre>";
+print_r($books);
+echo "</pre>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,56 +25,43 @@
 </head>
 
 <body style="background-color: #252525; color: #e0e0e0; font-family: 'Open Sans', serif">
-    <header>
-        <h1>Bibliotech</h1>
+    <header class="header">
+        <h1 class="header__title">Bibliotech</h1>
     </header>
-    <main>
+    <aside class="sidebar">
+        <h2 class="sidebar__welcome">Welcome, User1</h2>
+        <a class="sidebar__button">Change to User2</a>
+        <a class="sidebar__button">Change to User3</a>
+        <a class="sidebar__button">Create New Account</a>
+    </aside>
 
-        <section class="greeting">
-            <h2>Welcome, User1</h2>
-            <p>Change account</p>
-            <button>User2</button>
-            <button>User3</button>
-            <button>Create New Account</button>
+    <main class="main">
+
+        <h2 class="main__title">Gestión de Libros</h2>
+
+        <section id="books-menu">
+            <a class="books-menu__button" href="./pages/create-book.php">Añadir Libro</a>
+            <a class="books-menu__button" href="#">Filtrar por categoria</a>
         </section>
 
         <section class="books">
 
-            <h2>Gestión de Libros</h2>
 
-            <section id="books-menu">
-                <button>Añadir Libro</button>
-
-                <button>Filtrar por categoria</button>
-            </section>
-
-            <section class="book">
-                <h3>Get a Life, Chloe Brown</h3>
-                <p>Talia Hibber - Romance</p>
-                <img src="./assets/images/get-a-life-chloe-brown.jpg" alt="Get a life Chloe Brown" width="50px">
-                <p>
-                    After a health scare, Chloe Brown makes a list of things to do to help her "get a life,"
-                    including doing something bad. Naughty doesn't come naturally to good- ...
-                </p>
-                <button>Detalles</button>
-                <button>Editar Libro</button>
-                <button>Eliminar Libro</button>
-                <button>Solicitar Préstamo</button>
-            </section>
-
-            <section class="book">
-                <h3>Get a Life, Chloe Brown</h3>
-                <p>Talia Hibber - Romance</p>
-                <img src="./assets/images/get-a-life-chloe-brown.jpg" alt="Get a life Chloe Brown" width="50px">
-                <p>
-                    After a health scare, Chloe Brown makes a list of things to do to help her "get a life,"
-                    including doing something bad. Naughty doesn't come naturally to good- ...
-                </p>
-                <button>Detalles</button>
-                <button>Editar Libro</button>
-                <button>Eliminar Libro</button>
-                <button>Devolver Libro</button>
-            </section>
+            <?php foreach ($books as $book) : ?>
+                <article class="book">
+                    <section class="book-info">
+                        <h3 class="book-info__title"><?php echo $book->getTitle(); ?></h3>
+                        <em class="book-info__author">By <?php echo $book->getAuthor(); ?></em> | <strong class="book-info__category"><?php echo $book->getCategory(); ?></strong>
+                        <img class="book-info__cover" src="<?php echo $book->getCover(); ?>" alt="Book cover" width="50px">
+                        <p class="book-info__description"><?php echo $book->getDescription(); ?></p>
+                    </section>
+                    <section class="book-actions">
+                        <a class="book-actions__button" href="pages/edit-book.php?edit=<?php echo $book->getId(); ?>">Edit book</a>
+                        <a class="book-actions__button" href="?delete=<?php echo $book->getId(); ?>">Delete book</a>
+                        <a class="book-actions__button" href="?return=<?php echo $book->getId(); ?>">Return book</a>
+                    </section>
+                </article>
+            <?php endforeach ?>
 
         </section>
 
@@ -68,7 +69,7 @@
     <footer>
         <p>&copy; 2024 Bibliotech. Todos los derechos reservados.</p>
     </footer>
-    <script></script>
+    <script src="./assets/scripts/script.js"></script>
 </body>
 
 </html>

@@ -20,7 +20,7 @@ getDetails()
 
 class Book
 {
-    private static $nextId = 1; // Static property to track the next ID
+    // private static $nextId = 1; // Static property to track the next ID
     private $id;
     private $title;
     private $author;
@@ -29,9 +29,9 @@ class Book
     private $description;
     private $isAvailable;
 
-    function __construct($title, $author, $category, $cover, $description)
+    function __construct($id, $title, $author, $category, $cover, $description)
     {
-        $this->id = self::$nextId++; // Assign current ID and increment the static counter
+        $this->id = $id; // Assign current ID and increment the static counter
         $this->title = $title;
         $this->author = $author;
         $this->category = $category;
@@ -44,6 +44,7 @@ class Book
     function editBook() {}
     function deleteBook() {}
     function getDetails() {}
+
 
     /**
      * Get the value of id
