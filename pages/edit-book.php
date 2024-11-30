@@ -8,11 +8,7 @@ if (!isset($_SESSION['books'])) {
 }
 
 $books = $_SESSION['books'];
-/*
-Si existe la llave `edit` en el superglobal `$_GET`, obtener el objeto de la aerolínea 
-correspondiente usando el método `getAerolineaPorId()` y mostrar el formulario de edición. 
-Si no, mostrar el formulario de creación.
-*/
+
 function getBookById($id, $books)
 {
     foreach ($books as $book) {
@@ -41,7 +37,7 @@ if (isset($_GET['edit'])) {
 
 <body style="background-color: #252525; color: #e0e0e0; font-family: 'Open Sans', serif">
     <h1>Edit Book</h1>
-    <form action="./processes/edit-book-process.php" method="POST" enctype="multipart/form-data">
+    <form action="./processes/edit-book-process.php?edit=<?php echo $book->getId(); ?>" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $book->getId(); ?>">
 
         <label>Title</label>

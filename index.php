@@ -7,9 +7,9 @@ if (!isset($_SESSION['books'])) {
 }
 
 $books = $_SESSION['books'];
-echo "<pre>";
-print_r($books);
-echo "</pre>";
+// echo "<pre>";
+// print_r($books);
+// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ echo "</pre>";
                     </section>
                     <section class="book-actions">
                         <a class="book-actions__button" href="pages/edit-book.php?edit=<?php echo $book->getId(); ?>">Edit book</a>
-                        <a class="book-actions__button" href="?delete=<?php echo $book->getId(); ?>">Delete book</a>
+                        <a class="book-actions__button" href="pages/processes/delete-book-process.php?delete=<?php echo $book->getId(); ?>">Delete book</a>
                         <a class="book-actions__button" href="?return=<?php echo $book->getId(); ?>">Return book</a>
                     </section>
                 </article>
