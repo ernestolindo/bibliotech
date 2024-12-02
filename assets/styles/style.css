@@ -1,6 +1,185 @@
-input,
-textarea,
-button,
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap");
+
+:root {
+    /* Base colors */
+    --color-bg-primary: #121212; /* Main background */
+    --color-bg-secondary: #1e1e1e; /* Secondary background */
+    --color-bg-highlight: #2a2a2a; /* Highlight background (cards, modals) */
+
+    /* Text colors */
+    --color-text-primary: #ffffff; /* Main text color */
+    --color-text-secondary: #b3b3b3; /* Muted text color */
+    --color-text-highlight: #e0e0e0; /* Highlighted or active text */
+
+    /* Accent colors */
+    --color-accent: #e63946; /* Primary accent (red) */
+    --color-accent-hover: #ff4b5c; /* Lighter red for hover effects */
+
+    /* Borders and outlines */
+    --color-border: #333333; /* Border color */
+    --color-outline: #444444; /* Outline color for focus states */
+
+    /* Shadow */
+    --color-shadow: rgba(0, 0, 0, 0.6); /* Shadows for depth */
+
+    /* Other colors */
+    --color-success: #52b788; /* Green for success messages */
+    --color-warning: #f4a261; /* Orange for warnings */
+    --color-error: #e63946; /* Same red for errors */
+    --color-link: #f72585; /* Vibrant pink for links */
+
+    /* Fonts */
+    --headingsFont: "Oswald", sans-serif;
+    --mainFont: "Open Sans", serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--mainFont);
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--color-text-primary);
+}
+
+/* globals */
+
+.container {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--headingsFont);
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4 {
+    font-size: 2.8rem;
+}
+
 img {
-    display: block;
+    max-width: 100%;
+}
+
+.button {
+    background-color: var(--color-accent);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    color: var(--color-text-primary);
+    font-weight: bold;
+    border-radius: 1rem;
+    border: none;
+}
+
+.button:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* header */
+.header {
+    background-color: var(--color-bg-secondary);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Main */
+
+.main {
+    background-color: var(--color-bg-primary);
+}
+
+/* Main menu */
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Select */
+.select {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+    border: 0.1rem solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.8rem 1.2rem;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+/* Add hover and focus effects */
+.select:hover {
+    border-color: var(--color-accent-hover);
+}
+
+/* Option styling */
+.select__option {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    padding: 0.8rem;
+    border: none;
+}
+
+/* Disable option styling */
+.select__option:disabled {
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-highlight);
+}
+
+/* Books */
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+}
+
+.book {
+    padding: 3rem;
+    background-color: var(--color-bg-secondary);
+    border-radius: 1rem;
+}
+
+.book-info__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.book-info__title h3 {
+    margin: 0;
+}
+
+.available {
+    color: var(--color-success);
+}
+
+.not-available {
+    color: var(--color-error);
+}
+
+.book-info__cover {
+    width: 100%;
+    border-radius: 1rem;
 }

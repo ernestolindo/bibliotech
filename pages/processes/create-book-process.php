@@ -28,7 +28,10 @@ echo "Temporary path: " . $file['tmp_name'] . "<br>";
 echo "File size: " . $file['size'] . " bytes<br>";
 
 // Set the target directory
+
 $targetDir = "assets/uploads/";
+$relativeTargetDir = "../../" . "assets/uploads/";
+
 $targetFile = $targetDir . basename($file['name']);
 $relativeTargetFile = "../../" . $targetDir . basename($file['name']);;
 
@@ -47,8 +50,8 @@ if ($file['size'] > $maxFileSize) {
 }
 
 // Move the uploaded file to the target directory
-if (!is_dir($relativeTargetFile)) {
-    mkdir($relativeTargetFile, 0755, true); // Create the directory if it doesn't exist
+if (!is_dir($relativeTargetDir)) {
+    mkdir($relativeTargetDir, 0755, true); // Create the directory if it doesn't exist
 }
 
 if (move_uploaded_file($file['tmp_name'], $relativeTargetFile)) {
@@ -73,5 +76,10 @@ echo "Hey, do you like the book's details?. <br>";
 array_push($books, $newBook);
 
 $_SESSION['books'] = $books;
+
+// echo "<pre>";
+// print_r($_SESSION["books"]);
+// echo "</pre>";
+
 
 header('Location: ../../index.php');

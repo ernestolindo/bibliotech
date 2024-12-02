@@ -78,9 +78,9 @@ $book->setCategory($category);
 $book->setDescription($description);
 $book->setCover($cover);
 
-echo "<pre>";
-print_r($books);
-echo "</pre>";
+// echo "<pre>";
+// print_r($books);
+// echo "</pre>";
 
 // $_SESSION['books'] = $books;
 

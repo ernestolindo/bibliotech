@@ -49,9 +49,20 @@
     <p>
         To Kill a Mockingbird <br>
         Harper Lee <br>
-        Non-Fiction <br>
-        A historical overview of human evolution and civilization, addressing how humans
-        became the dominant species and shaped their societies, economies, and cultures.
+        Fiction <br>
+        A moving exploration of racism and morality in the American South.
+    </p>
+    <p>
+        1984 <br>
+        George Orwell <br>
+        Fiction <br>
+        A dystopian masterpiece that examines totalitarianism and surveillance.
+    </p>
+    <p>
+        Pride and Prejudice <br>
+        Jane Austen <br>
+        Fiction <br>
+        A timeless romance filled with wit and social commentary.
     </p>
 
     <script></script>
