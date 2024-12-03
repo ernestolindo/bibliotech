@@ -33,15 +33,30 @@
     --mainFont: "Open Sans", serif;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
     font-family: var(--mainFont);
     font-size: 1.6rem;
-    margin: 0;
     color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    display: flex;
+    flex-direction: column;
 }
 
 /* globals */
@@ -103,7 +118,7 @@ img {
 /* Main */
 
 .main {
-    background-color: var(--color-bg-primary);
+    flex: 1;
 }
 
 /* Main menu */
@@ -157,9 +172,12 @@ img {
     padding: 3rem;
     background-color: var(--color-bg-secondary);
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.book-info__title {
+.book__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,7 +185,7 @@ img {
     margin-bottom: 1rem;
 }
 
-.book-info__title h3 {
+.book__title h3 {
     margin: 0;
 }
 
@@ -179,7 +197,118 @@ img {
     color: var(--color-error);
 }
 
-.book-info__cover {
+.book__cover {
     width: 100%;
     border-radius: 1rem;
+}
+
+.book__details {
+    margin-top: 1rem;
+    /* text-align: center; */
+}
+
+.book__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.actions__button {
+    padding: 1rem;
+}
+
+.actions__button--loan {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.footer {
+    background-color: var(--color-bg-secondary);
+    margin-top: 3rem;
+    padding: 3rem 0;
+}
+
+/* Create form, edit form */
+
+.main-container {
+    background-color: var(--color-bg-secondary);
+    border-radius: 1rem;
+    padding: 2rem 8rem;
+    margin-top: 3rem;
+}
+
+.main-title {
+    margin: 0;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        "title title author"
+        "description description category"
+        "description description cover"
+        "submit submit submit";
+    margin: 2rem 0;
+    row-gap: 2rem;
+    column-gap: 8rem;
+}
+
+.form__title {
+    grid-area: title;
+}
+.form__author {
+    grid-area: author;
+}
+.form__description {
+    grid-area: description;
+}
+.form__category {
+    grid-area: category;
+}
+.form__cover {
+    grid-area: cover;
+    align-self: end;
+}
+.form__submit {
+    grid-area: submit;
+    justify-self: end;
+    align-self: center;
+    width: auto; /* Ensure the width only fits the content */
+    padding: 2rem 3rem;
+}
+
+.form__label {
+    display: block;
+}
+.form__input {
+    width: 100%;
+}
+
+/* Form styles by ChatGPT */
+
+/* General Input Styles */
+.form__input {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+    border: 0.1rem solid var(--color-border);
+    border-radius: 0.4rem;
+    padding: 1rem 1.2rem;
+    outline: none;
+    width: 100%; /* Optional: makes inputs span the container width */
+}
+
+/* Hover and Focus States */
+.form__input:hover {
+    border-color: var(--color-accent-hover);
+}
+
+/* Textarea Specific */
+.form__input--textarea {
+    resize: vertical; /* Allows vertical resizing only */
+    min-height: calc(100% - 2rem);
 }

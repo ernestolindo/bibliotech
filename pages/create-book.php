@@ -5,67 +5,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add a book</title>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-    </style>
     <link rel="stylesheet" href="../assets/styles/style.css">
 </head>
 
-<body style="background-color: #252525; color: #e0e0e0; font-family: 'Open Sans', serif">
-    <h1>Add a book</h1>
-    <form action="./processes/create-book-process.php" method="POST" enctype="multipart/form-data">
-        <label>Title</label>
-        <input type="text" name="title" required>
+<body>
+    <header class="header">
+        <div class="header-container container">
 
-        <label>Author</label>
-        <input type="text" name="author" required>
+            <h1 class="header-container__title">Bibliotech</h1>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main-container container">
+            <h1 class="main-title">Add a book</h1>
+            <form class="form" action="./processes/create-book-process.php" method="POST" enctype="multipart/form-data">
+                <div class="form__title">
 
-        <label>Category</label>
-        <input type="text" name="category" required>
+                    <label class="form__label">Title</label>
+                    <input class="form__input" type="text" name="title" required>
+                </div>
+                <div class="form__author">
+                    <label class="form__label">Author</label>
+                    <input class="form__input" type="text" name="author" required>
 
-        <label>Cover</label>
-        <input type="file" name="cover" accept="image/*" required>
+                </div>
 
-        <label>Description</label>
-        <textarea type="text" name="description" rows="4" required></textarea>
+                <div class="form__category">
+                    <label class="form__label">Category</label>
+                    <input class="form__input" type="text" name="category" required>
+                </div>
 
-        <button type="submit">Add book</button>
-    </form>
-    <p>
-        Don Quixote <br>
-        Miguel de Cervantes <br>
-        Classics <br>
-        The story of Alonso Quixano, a middle-aged man who loses his sanity due to
-        reading too many chivalric romances and decides to become a knight named Don Quixote.
-    </p>
-    <p>
-        The Lord of the Rings <br>
-        J.R.R. Tolkien <br>
-        Fantasy <br>
-        A hobbit named Frodo inherits the One Ring, which can destroy the entire world.
-        With the recently reawakened evil, being Sauron, going after the Ring
-        to cement his reign, Frodo joins with eight others to destroy the Ring and defeat Sauron.
-    </p>
-    <p>
-        To Kill a Mockingbird <br>
-        Harper Lee <br>
-        Fiction <br>
-        A moving exploration of racism and morality in the American South.
-    </p>
-    <p>
-        1984 <br>
-        George Orwell <br>
-        Fiction <br>
-        A dystopian masterpiece that examines totalitarianism and surveillance.
-    </p>
-    <p>
-        Pride and Prejudice <br>
-        Jane Austen <br>
-        Fiction <br>
-        A timeless romance filled with wit and social commentary.
-    </p>
 
-    <script></script>
+                <div class="form__cover">
+                    <label class="form__label">Cover</label>
+                    <input class="form__input" type="file" name="cover" accept="image/*" required>
+                </div>
+
+
+                <div class="form__description">
+                    <label class="form__label">Description</label>
+                    <textarea class="form__input form__input--textarea" type="text" name="description" required></textarea>
+                </div>
+
+
+                <button class="form__submit button" type="submit">Add book</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container container">
+
+            <p>&copy; 2024 Bibliotech. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
